@@ -2,9 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <ImageView
@@ -16,187 +16,87 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/tesaja" />
+        android:background="#EDEDED" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
 
-        android:id="@+id/constraintLayout"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:background="#3E64C7"
+        android:elevation="100dp"
+        android:id="@+id/constraintLayout2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:foregroundGravity="center_vertical|center_horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
-
         <ImageView
-            android:id="@+id/iv_camMania"
-            android:layout_width="148dp"
-            android:layout_height="136dp"
-            android:layout_marginStart="142dp"
-            android:layout_marginEnd="136dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/logo" />
-
-        <EditText
-            android:id="@+id/tv_username"
-            android:layout_width="326dp"
-            android:layout_height="43dp"
-            android:layout_marginTop="12dp"
-            android:background="@drawable/form"
-            android:hint="Username"
-            android:paddingLeft="10dp"
-            app:layout_constraintEnd_toEndOf="@+id/iv_camMania"
-            app:layout_constraintHorizontal_bias="0.51"
-            app:layout_constraintStart_toStartOf="@+id/iv_camMania"
-            app:layout_constraintTop_toBottomOf="@+id/iv_camMania" />
-
-        <EditText
-            android:inputType="textPassword"
-            android:id="@+id/tv_repassword"
-            android:layout_width="326dp"
-            android:layout_height="43dp"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/form"
-            android:hint="Password"
-            android:paddingLeft="10dp"
-            app:layout_constraintEnd_toEndOf="@+id/tv_username"
-            app:layout_constraintStart_toStartOf="@+id/tv_username"
-            app:layout_constraintTop_toBottomOf="@+id/tv_username" />
+            android:layout_gravity="center"
+            android:background="@drawable/atas_font"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"/>
 
         <Button
-            android:id="@+id/btn_login"
-            android:layout_width="326dp"
-            android:layout_height="53dp"
-            android:layout_marginTop="16dp"
-            android:text="Log In"
-            android:textAllCaps="false"
-            app:backgroundTint="@color/blue"
-            app:cornerRadius="30dp"
-            app:layout_constraintEnd_toEndOf="@+id/tv_repassword"
-            app:layout_constraintStart_toStartOf="@+id/tv_repassword"
-            app:layout_constraintTop_toBottomOf="@+id/tv_repassword" />
-
-        <LinearLayout
-            android:id="@+id/linearLayout2"
+            android:textSize="15dp"
+            android:id="@+id/btn_kategori"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:gravity="center"
-            app:layout_constraintEnd_toEndOf="@+id/btn_login"
-            app:layout_constraintStart_toStartOf="@+id/btn_login"
-            app:layout_constraintTop_toBottomOf="@+id/btn_login">
+            android:backgroundTint="#FE813B"
+            android:gravity="left"
+            android:text="Category"
+            android:textAlignment="gravity"
+            android:textAllCaps="false" />
+        <TextView
+            android:textSize="15dp"
+            android:layout_marginBottom="4dp"
+            android:paddingLeft="10dp"
+            android:textColor="#fff"
+            android:text="Recommendation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
-            <View
-                android:layout_width="140dp"
-                android:layout_height="1dp"
-                android:background="@color/black" />
+        <com.denzcoskun.imageslider.ImageSlider
+            android:id="@+id/slider"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:auto_cycle="true"
+            app:corner_radius="5"
+            app:delay="0"
+            app:error_image="@drawable/bg_gray1"
+            app:period="1000"
+            app:placeholder="@drawable/bg_gray1">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:text="OR" />
-
-            <View
-                android:layout_width="140dp"
-                android:layout_height="1dp"
-                android:background="@color/black" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:baselineAligned="true"
-            android:gravity="center"
-            android:onClick="onClick"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/linearLayout2"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
-
-            <TextView
-                android:id="@+id/tv_already"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="Don't have account? "
-                android:textAlignment="center"
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/tv_btnSignUp"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:onClick="onClick"
-                android:text="Sign Up"
-                android:textAlignment="gravity"
-                android:textColor="#000000"
-                android:textStyle="normal|bold" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:baselineAligned="true"
-            android:gravity="center"
-            android:onClick="onClick"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="@+id/linearLayout"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/linearLayout"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
-
-            <Button
-                android:id="@+id/btn_pelanggan"
-                style="@style/Widget.AppCompat.Button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Pelanggan"
-                android:textAllCaps="false"
-                android:textColor="#000000"
-                android:textSize="11sp"
-                app:backgroundTint="#C4C4C4" />
-
-            <Button
-                android:id="@+id/btn_karyawan"
-                style="@style/Widget.AppCompat.Button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Kasir"
-                android:textAllCaps="false"
-                android:textColor="#000000"
-                android:textSize="14sp"
-                app:backgroundTint="#C4C4C4" />
-
-            <Button
-                android:id="@+id/btn_admin"
-                style="@style/Widget.AppCompat.Button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Admin"
-                android:textAllCaps="false"
-                android:textColor="#000000"
-                android:textSize="14sp"
-                app:backgroundTint="#C4C4C4" />
-
-        </LinearLayout>
+        </com.denzcoskun.imageslider.ImageSlider>
+    </LinearLayout>
 
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_movie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+    </androidx.recyclerview.widget.RecyclerView>
+
+        <RelativeLayout
+            android:orientation="vertical"
+            android:id="@+id/constraintLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.ismaeldivita.chipnavigation.ChipNavigationBar
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:background="@drawable/bot_navi"
+                android:layout_alignParentBottom="true"
+                android:elevation="16dp"
+                android:padding="8dp"
+                app:cnb_menuResource="@menu/menu_bottom"
+            />
+
+        </RelativeLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
